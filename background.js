@@ -157,7 +157,8 @@ function navBack(pageName, tabidnum) {
             chrome.scripting.executeScript({
                 target: { tabId: tabidnum },
                 func: function () {
-                    window.open("https://www.allegiantair.com/", "_self")
+                    var urlTored =  document.URL.split('com/')
+                    window.open(urlTored[0]+"com/", "_self")
                 }
             })
             break;

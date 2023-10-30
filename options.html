@@ -67,7 +67,45 @@
     <div>Year</div><input class="inputBox" type="number" id="Cardyear" name="Cardyear">
     <pre>
    </pre>
-    <button type="submit" class="button-55" id="Submit" value="save">Submit</button>
+   <style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {background-color: #ddd;}
+    
+    .dropdown:hover .dropdown-content {display: block;}
+    
+    .dropdown:hover .dropbtn {background-color: #3e8e41;}
+    </style>
+   <div class="dropdown">
+    <button type="menu" class="button-55" >Launch ENV</button>
+    <div class="dropdown-content">
+      <a id="launch_STG" >STG</a>
+      <a id = "launch_QAT" >QATNEXUSG4</a>
+      <a id = "launch_INT">INTNEXUSG4</a>
+      <a id = "launch_QA1">QA1</a>
+      <a id = "launch_QA2">QA2</a>
+    </div>
+  </div>
+  <button type="submit" class="button-55" id="Submit" value="save">Submit</button>
     <button type="button" class="button-55" id="reset" value="reset">Set default</button>
     <p style="color: red ;">*Please Submit after Setting defaults*</p>
 </body>

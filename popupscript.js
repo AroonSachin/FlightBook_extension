@@ -111,8 +111,7 @@ var common = {
         return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     }
 }
-
-var queryOptions = { active: true, lastFocusedWindow: true };
+var queryOptions = { active: true, currentWindow: true };
 // `tab` will either be a `tabs.Tab` instance or `undefined`.
 var [tab] = await chrome.tabs.query(queryOptions);
 chrome.storage.session.set({ tabid: tab.id }).then(() => {
@@ -120,18 +119,15 @@ chrome.storage.session.set({ tabid: tab.id }).then(() => {
 });
 chrome.storage.session.get(["tabid"]).then((result) => {
     console.log("Value currently is " + result.tabid);
-    var tab = result.tabid
+    let tab = result.tabid
     /*******************************Home Page**************************************************************************** */
     /**
      * @listner navigates to the HomePage and executes the script when the Allegiant_Home button is clicked in the extension PopUp. 
      */
     document.getElementById("Allegiant_Home").addEventListener('click', async function () {
-
-        console.log("in")
         chrome.scripting.executeScript({
             target: { tabId: tab },
             func: function () {
-
                 if (document.readyState === 'complete') {
                     var Homeport = chrome.runtime.connect({ name: "homefrompopup" });
                     Homeport.postMessage({ page: document.title + "home" });
@@ -140,7 +136,6 @@ chrome.storage.session.get(["tabid"]).then((result) => {
                 }
             }
         })
-
     })
 
     /*******************************Flights Page**************************************************************************** */

@@ -11,6 +11,7 @@ var TravelersPage = {
                         chrome.storage.sync.get('paxCount', function (count) {
                             console.log("in get count")
                             //For loop for first name.
+                            console.log(count.paxCount)
                             for (let index = 0; index < count.paxCount; index++) {
                                 common.simulateTextEntry(common.getElement("//input[@id='adults." + index + ".first-name']"), paxInfo[index].firstName)
                             }
