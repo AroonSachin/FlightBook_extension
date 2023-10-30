@@ -13,20 +13,22 @@
   ],
   "homepage_url": "https://www.stg.allegiantair.com/",
   "host_permissions": [
-    "https://www.stg.allegiantair.com/*"
+    "https://www.stg.allegiantair.com/*",
+    "https://www.qa1.allegiantair.com/*",
+    "https://www.qa2.allegiantair.com/*",
+    "https://www-qatnexusg4.okd.allegiantair.com/*",
+    "https://www-intnexusg4.okd.allegiantair.com/*"
 
   ],
   "action": {
     "default_popup": "PopUp.html",
     "default_icon": "images/allegiantair.png"
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "https://www.stg.allegiantair.com/*"
-      ],
-      "js": [
-        "jquery.js",
+  "content_scripts": 
+[{
+  "run_at": "document_end",
+  "js": [
+    "jquery.js",
         "commons/commonFunctions.js",
         "commons/scriptflags.js",
         "commons/pages/bagsandextras.js",
@@ -39,9 +41,95 @@
         "commons/pages/seatspage.js",
         "commons/pages/TravelersPage.js",
         "faker.js"
-      ]
-    }
   ],
+  "matches": [
+    "https://www.stg.allegiantair.com/*"
+  ]
+},
+{
+  "run_at": "document_end",
+  "js": [
+    "jquery.js",
+        "commons/commonFunctions.js",
+        "commons/scriptflags.js",
+        "commons/pages/bagsandextras.js",
+        "commons/pages/BundlesPage.js",
+        "commons/pages/carspage.js",
+        "commons/pages/FlaghtsPage.js",
+        "commons/pages/HomePage.js",
+        "commons/pages/hotelspage.js",
+        "commons/pages/paymentpage.js",
+        "commons/pages/seatspage.js",
+        "commons/pages/TravelersPage.js",
+        "faker.js"
+  ],
+  "matches": [
+    "https://www-qatnexusg4.okd.allegiantair.com/*"
+  ]
+},
+{
+  "run_at": "document_end",
+  "js": [
+    "jquery.js",
+        "commons/commonFunctions.js",
+        "commons/scriptflags.js",
+        "commons/pages/bagsandextras.js",
+        "commons/pages/BundlesPage.js",
+        "commons/pages/carspage.js",
+        "commons/pages/FlaghtsPage.js",
+        "commons/pages/HomePage.js",
+        "commons/pages/hotelspage.js",
+        "commons/pages/paymentpage.js",
+        "commons/pages/seatspage.js",
+        "commons/pages/TravelersPage.js",
+        "faker.js"
+  ],
+  "matches": [
+    "https://www-intnexusg4.okd.allegiantair.com/*"
+  ]
+},
+{
+  "run_at": "document_end",
+  "js": [
+    "jquery.js",
+        "commons/commonFunctions.js",
+        "commons/scriptflags.js",
+        "commons/pages/bagsandextras.js",
+        "commons/pages/BundlesPage.js",
+        "commons/pages/carspage.js",
+        "commons/pages/FlaghtsPage.js",
+        "commons/pages/HomePage.js",
+        "commons/pages/hotelspage.js",
+        "commons/pages/paymentpage.js",
+        "commons/pages/seatspage.js",
+        "commons/pages/TravelersPage.js",
+        "faker.js"
+  ],
+  "matches": [
+    "https://www.qa1.allegiantair.com/*"
+  ]
+},
+{
+  "run_at": "document_end",
+  "js": [
+    "jquery.js",
+        "commons/commonFunctions.js",
+        "commons/scriptflags.js",
+        "commons/pages/bagsandextras.js",
+        "commons/pages/BundlesPage.js",
+        "commons/pages/carspage.js",
+        "commons/pages/FlaghtsPage.js",
+        "commons/pages/HomePage.js",
+        "commons/pages/hotelspage.js",
+        "commons/pages/paymentpage.js",
+        "commons/pages/seatspage.js",
+        "commons/pages/TravelersPage.js",
+        "faker.js"
+  ],
+  "matches": [
+    "https://www.qa2.allegiantair.com/*"
+  ]
+}],
   "options_ui": {
     "page": "options.html",
     "open_in_tab": false
