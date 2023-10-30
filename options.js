@@ -1,5 +1,30 @@
 $(function () {
     console.log("inside function")
+    $('#launch_STG').click(function () {
+        let newURL = "https://www.stg.allegiantair.com/";
+        chrome.tabs.create({ url: newURL });
+        close();
+    })
+    $('#launch_QAT').click(function () {
+        let newURL = "https://www-qatnexusg4.okd.allegiantair.com/";
+        chrome.tabs.create({ url: newURL });
+        close();
+    })
+    $('#launch_INT').click(function () {
+        let newURL = "https://www-intnexusg4.okd.allegiantair.com/";
+        chrome.tabs.create({ url: newURL });
+        close();
+    })
+    $('#launch_QA1').click(function () {
+        let newURL = "https://www.qa1.allegiantair.com/";
+        chrome.tabs.create({ url: newURL });
+        close();
+    })
+    $('#launch_QA2').click(function () {
+        let newURL = "https://www.qa2.allegiantair.com/";
+        chrome.tabs.create({ url: newURL });
+        close();
+    })
     $('#Submit').click(function () {
         let depCity = $('#DepartureCity').val();
         let desCity = $('#DestinationCity').val();
@@ -98,10 +123,6 @@ $(function () {
         chrome.storage.sync.set({'Billphone':faker.phone.phoneNumber('687-###-####')},function(){})
 
         chrome.storage.sync.set({'BillMail':faker.internet.email()},function(){})
-
-        let newURL = "https://www.allegiantair.com/";
-        chrome.tabs.create({ url: newURL });
-        close();
     })
     $('#reset').click(function () {
         let yearDate = new Date();

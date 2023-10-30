@@ -20,7 +20,7 @@ var BundlesPage= {
     clickSearchButton: function () {
         let continueBundleInterval = setInterval(() => {
             if (flags.BundlesFlag.PremiumFlag) {
-                common.reactClick(document.getElementsByClassName('Button__StyledButton-sc-1ececxa-1 ijtqnd PageFooter__ContinueButton-sc-12arybe-0 jnUVpt')[0], " Continue Button ")
+                common.reactClick(common.getElement("//button[@data-hook='bundles-page_continue']"), " Continue Button ")
                 flags.BundlesFlag.PremiumFlag = false;
                 flags.BundlesFlag.continueFlag = true;
                 clearInterval(continueBundleInterval)
