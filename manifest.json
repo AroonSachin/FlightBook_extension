@@ -11,9 +11,10 @@
     "webNavigation",
     "storage"
   ],
-  "homepage_url": "https://www.allegiantair.com/",
+  "homepage_url": "https://www.stg.allegiantair.com/",
   "host_permissions": [
-    "https://www.allegiantair.com/*"
+    "https://www.stg.allegiantair.com/*"
+
   ],
   "action": {
     "default_popup": "PopUp.html",
@@ -22,7 +23,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.allegiantair.com/*"
+        "https://www.stg.allegiantair.com/*"
       ],
       "js": [
         "jquery.js",
